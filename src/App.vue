@@ -1,28 +1,34 @@
 <template>
-  <div>
-    <div>
-      <AppFooter />
-      <main>
-        공통 최 상 위 vue 입니다.
-        <RouterView />
-      </main>
-    </div>
+  <div class="app-container">
+    <AppHeader />
+    <main class="content">
+      <RouterView />
+    </main>
+    <AppFooter />
   </div>
 </template>
 
 <script setup>
-import { RouterView, useRoute } from 'vue-router';
-import { computed, ref, onMounted } from 'vue';
-import AppFooter from './components/common/AppFooter.vue';
-
-const route = useRoute();
-
-// 특정 페이지에서 숨길 경로 목록 예시
-const excludedPaths = [
-  '/login',
-];
-
+import { RouterView } from "vue-router";
+import AppHeader from "@/components/common/AppHeader.vue";
+import AppFooter from "@/components/common/AppFooter.vue";
 </script>
 
 <style scoped>
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  max-width: 430px;
+  margin: 0 auto;
+  background-color: #f9f9f9;
+  overflow: hidden; 
+}
+
+.content {
+  flex: 1;
+  overflow: hidden; 
+}
+
 </style>
