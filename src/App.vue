@@ -1,47 +1,28 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+  <div>
+    <div>
+      <AppFooter />
+      <main>
+        공통 최 상 위 vue 입니다.
+        <RouterView />
+      </main>
     </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  </div>
 </template>
 
+<script setup>
+import { RouterView, useRoute } from 'vue-router';
+import { computed, ref, onMounted } from 'vue';
+import AppFooter from './components/common/AppFooter.vue';
+
+const route = useRoute();
+
+// 특정 페이지에서 숨길 경로 목록 예시
+const excludedPaths = [
+  '/login',
+];
+
+</script>
+
 <style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
 </style>
