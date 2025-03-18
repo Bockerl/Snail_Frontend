@@ -9,9 +9,13 @@
             안녕하세요,<br /> <span class="username">{이름}</span> 님
             </p>
           </div>
+          <div class="notification-container">
+            <div class="notification-icon">
+                <img src="@/assets/icons/common/alramlogo.svg" alt="알림" />
+            </div>
+            </div>
         </div>
-        <img src="@/assets/icons/common/alramlogo.svg" class="notification-icon" />
-      </div>
+    </div>
   
       <!-- 번역 렌즈 -->
       <div class="lens-header">
@@ -77,6 +81,8 @@
   }
   
   .profile-section {
+    gap:10px;
+    width: 100%;
     display: flex;
     align-items: center;
   }
@@ -87,6 +93,7 @@
     border-radius: 50%;
     margin-right: 15px;
   }
+
   
   .user-text {
     display: flex;
@@ -99,7 +106,7 @@
   font-size: 15px;
   color: #777;
   margin: 0;
-  padding: 0;
+  padding-right: 200px;
  }
 
  .username {
@@ -108,11 +115,29 @@
   color: #5D68F5;
  }
   
-  .notification-icon {
-    width: 24px;
-    height: 24px;
-  }
-  
+ .notification-container {
+    display: flex;
+    align-items: right;
+}
+
+.notification-icon {
+    width: 34px;
+    height: 34px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15); 
+    cursor: pointer;
+}
+
+
+.notification-icon img {
+    width: 18px;
+    height: 18px;
+}
+
   .lens-header {
     margin-top: 30px;
     display: flex;
