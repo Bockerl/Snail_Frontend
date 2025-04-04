@@ -4,14 +4,17 @@
     <main class="content">
       <RouterView />
     </main>
-    <AppFooter />
+    <AppFooter v-if="route.name !== 'Chatbot'" />
   </div>
 </template>
 
 <script setup>
-import { RouterView } from "vue-router";
-import AppHeader from "@/components/common/AppHeader.vue";
-import AppFooter from "@/components/common/AppFooter.vue";
+import { RouterView, useRoute } from 'vue-router'
+import AppHeader from '@/components/common/AppHeader.vue'
+import AppFooter from '@/components/common/AppFooter.vue'
+
+const route = useRoute()
+
 </script>
 
 <style scoped>
